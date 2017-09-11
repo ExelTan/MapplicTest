@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>mapplic</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/mapplic.css">
+		<link rel="stylesheet" type="text/css" href="css/map.css">
+		<link rel="stylesheet" href="css/magnific-popup.css" />
+
+	</head>
+	<body>
+	<div id="header"></div>
+    <div id="content">
+    	  <section id="map-section" class="inner over">
+					<div class="editor-window">
+						<div class="window-mockup brown"></div>
+						<div class="editor-body">
+							<code>
+								{<br>
+								&nbsp;&nbsp;&nbsp;"id": "newlandmark",<br>
+								&nbsp;&nbsp;&nbsp;"title": "New Landmark",<br>
+								&nbsp;&nbsp;&nbsp;"description": "Creating a new landmark is that easy!",<br>
+								&nbsp;&nbsp;&nbsp;"x": "<span class="mapplic-coordinates-x">0.0000</span>",<br>
+								&nbsp;&nbsp;&nbsp;"y": "<span class="mapplic-coordinates-y">0.0000</span>",<br>
+								&nbsp;&nbsp;&nbsp;...<br>
+								}
+							</code>
+						</div>
+					</div>
+
+					<div class="map-container">
+						<div class="window-mockup">
+							<div class="window-bar"></div>
+						</div>
+						<!-- Map -->
+						<div id="mapplic"></div>
+					</div>
+      </section>
+    </div>
+		
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hammer.min.js"></script>
+	<script type="text/javascript" src="js/jquery.mousewheel.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+	<script type="text/javascript" src="js/magnific-popup.js"></script>
+	<script type="text/javascript" src="js/mapplic.js"></script>
+    <script type="text/javascript">
+			$(document).ready(function() {
+				var map = $('#mapplic').mapplic({
+					source: 'data/apartment.json',
+					height: 460,
+					mapfill: true,
+					lightbox: true,
+					maxscale: 1,
+					zoom:true
+				});
+
+				// EVENTS
+				// Map ready
+				map.on('mapready', function(e, self) {
+					console.log('Map is ready!')
+					// self grants direct access to the map object
+					// The map will be focused on the washing machine by default
+					//self.moveTo(0.67, 0.62, 3, 0);
+				});
+
+				// Location opened
+				map.on('locationopened', function(e, location) {
+					// location grants full access to the location
+					console.log(location.title + ' opened.');
+				});
+
+				// Location closed
+				map.on('locationclosed', function(e) {
+					console.log('Location closed.');
+				});
+
+				// Level switched
+				map.on('levelswitched', function(e, level) {
+					console.log('Switched to ' + level + ' level.');
+				});
+
+				// Position changed
+				map.on('positionchanged', function(e, self) {
+					// self grants direct access to the map object
+					//console.log('Pan or zoom performed, current scale: ' + self.scale);
+				});
+
+				// METHODS
+				// Getting mapplic object
+				var self = map.data('mapplic');
+
+				map.on('locationclosed', function(e) {
+					//console.log(self);
+				});
+			});
+
+	</script>
+
+	</body>
+</html>

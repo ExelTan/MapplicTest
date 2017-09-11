@@ -1,0 +1,78 @@
+{
+    "mapwidth":"2000",
+	"mapheight":"1500",
+	"categories":[
+
+	],
+	"levels":[
+		{
+			"id":"world",
+			"title":"World",
+			"map":"img/warehouse.jpg",
+			"minimap": "img/warehouse-mini.jpg",
+			"locations":[
+			    {
+					"id": "shelf_one",
+					"title": "货架一",
+					"description": "最左侧的货架",
+					"pin": "default",
+					"action": "default",
+					"link":"http://www.intmote.com/",
+					"thumbnail": "img/case.jpg",
+					"x": "0.2050",
+					"y": "0.4660",
+					"zoom": "2"
+				},
+				{
+					"id": "shelf_two",
+					"title": "货架二",
+					"description": "靠近门口的货架，懋特物联专有货架！",
+					"pin": "default",
+					"action": "default",
+					"link":"http://www.intmote.com/",
+					"thumbnail": "img/case2.jpg",
+					"x": "0.2577",
+					"y": "0.5187",
+					"zoom": "2"
+				},
+				{
+					"id": "shelf_three",
+					"title": "货架三",
+					"description": "中间货架，存放线缆！",
+					"pin": "default",
+					"action": "default",
+					"link":"http://www.intmote.com/",
+					"thumbnail": "img/case.jpg",
+					"x": "0.4115",
+					"y": "0.4727",
+					"zoom": "2"
+				},
+				{
+					"id": "shelf_botom",
+					"title": "底货架",
+					"description": "最后一排货架，存放无用物品！",
+					"pin": "default",
+					"action": "default",
+					"link":"http://www.intmote.com/",
+					"thumbnail": "img/case4.jpg",
+					"x": "0.7010",
+					"y": "0.1973",
+					"zoom": "2"
+				},
+				{
+					"id": "shelf_angel",
+					"title": "角落架",
+					"description": "懋特物联存放贵重物品的货架！",
+					"pin": "default",
+					"action": "default",
+					"link":"http://www.intmote.com/",
+					"thumbnail": "img/case.jpg",
+					"x": "0.7130",
+					"y": "0.4640",
+					"zoom": "2"
+				}
+			]	
+		}
+	]	
+			
+}
